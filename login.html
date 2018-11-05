@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="./css/jquery-ui.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap-theme.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <script src="./js/jquery.js"></script>
+    <script src="./js/flexible.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+    <script src="./js/distpicker.js"></script>
+    <script src="./js/layer/layer.js"></script>
+    <script src="./js/util.js"></script>
+    <title>立足当下，布局未来，教育品牌大狂欢</title>
+</head>
+<body>
+    <div class="login">
+        <div class="login-bk-img " >
+            <!-- logo -->
+            <div class="login-tb-img">
+                <img src="img/login/logo.png">
+            </div>
+            <!-- 登录框 -->
+            <div class="box">
+                <div class="login-border" >
+                    <div class="login-border-box">
+                        <p>手机号码</p>
+                        <div class="form-phone">
+                            <img class="icon" src="img/login/iphone.png" alt="">
+                            <input id="phone" type="text" value="" placeholder="请输手机号码" name="uphone" required>
+                        </div>
+                    </div>
+                    <div class="login-border-box1">
+                        <p>验证码</p>
+                        <div class="form-yzm">
+                            <img class="icon" src="img/login/Shape-8.png" alt="">
+                            <input type="text" placeholder="请输入验证码" value=""  id="yzm" name="code" required>
+                            <a class="btn btn1"  id="handleGetYzm" >
+                                <img src="img/login/yz.png">
+                            </a>
+                            <span class=" btn1 ji-shi" style="display: none"></span>
+                            <a class="btn btn2"  id="handleGetYzm1" style="display: none">
+                                <img src="img/login/cxyz.png">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="login-btn-dl">
+                        <button class="btn login-btn" id="loginDj">登录</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(function (){
+        var baseURL="http://wx.xiaozhangbao.com/Eleven";
+
+
+        //获取验证码
+        $('#handleGetYzm').click(function (){
+            var phone=$('#phone').val();
+            var reg=/^1[3-9][0-9]{9}$/;
+            if (phone!=""&&reg.test(phone)){
+                $.ajax({
+                    type:"post",
+                    url:baseURL+'/user/sendCode',
+                    data:{phone:phone},
+                    success:function (res){
+                        if(res.status==200){
+                            layer.msg("验证码发送成功");
+                            $(".btn1").hide();
+                            $(".ji-shi").show().html("60");
+                            var timer = setInterval(Countdown,1000);
+                            //获取优惠券 倒计时
+                            var i=60;
+                            function Countdown(){
+                                if(i>1){
+                                    i--;
+                                    $(".ji-shi").html(i);
+                                } else{
+                                    clearInterval(timer);
+                                    $(".ji-shi").hide()
+                                    $(".btn2").show();
+                                    $(".btn1").hide();
+                                }
+                            }
+                        }else{
+                            layer.msg("请稍后重试");
+                        }
+                    },
+                    error:function(error){
+                        console.log(error);
+                    }
+                })
+            } else{
+                layer.msg("您输入的电话可能有误");
+            }
+        })
+        //重新获取验证码
+        $ ('#handleGetYzm1').click(function (){
+            var phone=$('#phone').val();
+            var reg=/^1[3-9][0-9]{9}$/;
+            if (phone!=""&&reg.test(phone)){
+                $.ajax({
+                    type:"post",
+                    url:baseURL+'/user/sendCode',
+                    data:{phone:phone},
+                    success:function (res){
+                        if(res.status==200){
+                            layer.msg("验证码发送成功");
+                            $(".btn2").hide();
+                            $(".ji-shi").show().html("60");
+                            var timer = setInterval(Countdown,1000);
+
+                            //获取优惠券 倒计时
+                            var i=60;
+                            function Countdown(){
+                                if(i>1){
+                                    i--;
+                                    $(".ji-shi").html(i);
+                                } else{
+                                    clearInterval(timer);
+                                    $(".ji-shi").hide()
+                                    $(".btn2").show();
+                                    $(".btn1").hide();
+                                }
+                            }
+                        }else{
+                            layer.msg("请稍后重试");
+                        }
+                    },
+                    error:function(error){
+                        console.log(error);
+                    }
+                })
+            } else{
+                layer.msg("您输入的电话可能有误");
+            }
+        })
+
+        $('#loginDj').click(function (){
+            var phone=$('#phone').val();
+            var code=$('#yzm').val();
+            console.log(code);
+            var reg=/^1[3-9][0-9]{9}$/;
+            if (code==""){
+                layer.msg("验证码不正确");
+                return
+            }
+            if (phone!=""&&reg.test(phone)){
+                $.ajax({
+                    url:baseURL+"/user/validateCode/"+phone+"/"+code,
+                    type:"get",
+                    success:function (res){
+                        console.log(res);
+                        if(res.status==200){
+                            setUserId(res.messId);
+                            console.log(getUserId());
+                            history.go(-1);
+                            layer.msg('登录成功');
+                        }else{
+                            layer.msg('登录失败，用户名或验证码错误')
+                        }
+                    },
+                    error:function (error){
+                        console.log(error)
+                    }
+                })
+            }else{
+                layer.msg("你输入的电话号码有误");
+            }
+        })
+    })
+</script>
+</html>

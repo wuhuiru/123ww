@@ -1,0 +1,313 @@
+*{
+    font-family: "微软雅黑";
+    font-size:0.3rem;
+}
+/*背景*/
+.bj,.container{
+    background-color: #ff894c !important;
+}
+/*按钮定位*/
+.fudong{
+    position: fixed;
+    top: 40%;
+    right: 0;
+}
+.fudong a.btn{
+    background-color: black !important;
+    opacity: .7 !important;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+}
+
+/*两个h5的字体样式*/
+
+div>h5{
+    display: inline-block;
+    font-size: .45rem;
+    text-align: center;
+    color: #FFF;
+    padding-bottom: .1rem;
+}
+.sbk div.txt1{
+    width: 100%;
+    text-align: center;
+}
+.sbk div h5{
+    width: 3.4rem;
+    height: .68rem;
+    display: inline-block;
+    background: url("../img/index/xm.png") no-repeat;
+    background-size: 100% 100%;
+}
+/*活动简介*/
+/*活动简介*/
+.txt{
+    width: 100%;
+    text-align: center;
+}
+.jieshao{
+    display: inline-block;
+    padding: .3rem .6rem 0 .6rem;
+    width: 9.7rem;
+    height: 5.9rem;
+    background: url("../img/index/txt.png") no-repeat;
+    background-size: 9.7rem 5.9rem;
+    border-radius: 5px;
+    font-size: .3rem;
+    color: black;
+}
+/*项目介绍样式*//*项目详情*/
+.jieshao div h5{
+    padding: 0 .5rem 0 .5rem;
+    display: inline-block;
+    font-size: .45rem;
+    font-weight: bold;
+    text-align: center;
+    color: #ff5700;
+}
+.jieshao div{
+    margin-bottom: .2rem;
+}
+.jieshao>div>img{
+    width: .43rem;
+    height: .4rem;
+}
+.jieshao p,.detils p{
+    font-size: .35rem;
+    text-align: left;
+}
+.jieshao div{
+    position: relative;
+}
+.jieshao>div>a{
+    display: inline-block;
+    font-size: .3rem;
+    position: absolute;
+    top: .4rem;
+    text-decoration: none;
+    right: 0rem;
+}
+/*项目名称的字体样式*/
+.txt>div>p#actP{
+    text-indent: 20px !important;
+    text-align: left !important;
+    font-family: "微软雅黑";
+    font-size: .25rem;
+    color: #FFFFFF;
+}
+/*设置项目logo和名称的居中*/
+.box-xm{
+    width: 100%;
+    margin-top: 3%;
+    border-radius: 5px;
+    background-color: #FFF !important;
+    margin-bottom: 4%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /*border: 1px solid red ;*/
+}
+.box-xm .box-img{
+    /*border: 1px solid red ;*/
+    text-align: left;
+    padding: 10px 15px 10px 8px;
+}
+.box-xm .box-img img{
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    /*border: 1px solid red ;*/
+    display: inline-block;
+
+}
+.box-xm .box-img{
+    border-right: 2px dashed #ffa373;
+}
+.des{
+    text-align: left !important;
+    padding: 10px !important;
+}
+.des h6{
+    display: inline-block;
+    margin: 0 !important;
+    font-size: .35rem;
+    font-weight: bold;
+    font-family: "黑体";
+    padding-bottom: 2px;
+}
+.des>span{
+    color: #FF3846;
+    font-size: .3rem;
+}
+.des p{
+    font-size: .3rem;
+    margin: 0;
+}
+.des .can-t{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.can-t .t-xm,.can-t .t-go{
+    display: inline-block;
+}
+.can-t .t-xm{
+    text-align: left !important;
+}
+.can-t .t-xm{
+    /*width: 60%;*/
+    text-align: center;
+    line-height: .7rem;
+}
+.can-t .t-xm img{
+
+    display: inline-block;
+}
+.can-t .t-xm div{
+    width: 2.7rem;
+    height: .5rem;
+    background: url("../img/index/jinxu.png") no-repeat;
+    background-size:2.7rem  .5rem;
+    text-align: center;
+    line-height: .5rem;
+}
+.can-t .t-xm div span{
+    font-size: .2rem !important;
+    color:#ff8b4f;
+}
+.can-t .t-xm div span s{
+    display: inline-block;
+    width: 2.7rem ;
+}
+.can-t .t-xm span{
+    margin: 0;
+    font-size: .5rem;
+    color: #FF3846;
+    display: inline-block;
+}
+.can-t .t-go{
+    display: inline-block;
+    /*width: 40%;*/
+    text-align: center;
+    line-height: .7rem;
+}
+.can-t .t-go a{
+    display: inline-block;
+    width: 2.5rem;
+    height: .8rem;
+    background: url("../img/index/btn_bg_sy.png");
+    background-size: 2.5rem .8rem;
+    color: #FFFFFF;
+    line-height: .8rem;
+}
+.can-t .t-go .fontZi{
+    color: black !important;
+}
+.can-t .t-go{
+    padding-left: 10px;
+}
+.fudong{
+    width: 2.8rem;
+    height:1.7rem;
+    background: url("../img/index/myTuan.png") no-repeat !important;
+    background-size: 2.8rem 1.7rem !important;
+}
+a.myTuan .fudong {
+    z-index: 1000;
+    position: fixed;
+    top: 30%;
+    right: 0;
+    display: inline-block;
+    width: 2.8rem;
+    height:1.7rem;
+}
+/*模态框样式*/
+#mymodal1 .modal-body,#mymodal2 .modal-body{
+    padding: 0px !important;
+    padding-top: 5px !important;
+}
+#mymodal1 .modal-header,#mymodal2 .modal-header{
+    padding: 20px 0 20px 0 !important;
+}
+#mymodal1 .modal-footer,#mymodal2 .modal-footer{
+    margin-top: 38px;
+}
+#mymodal2 .modal-footer{
+    margin-top: 45px;
+}
+.modal-footer{
+    margin-top: .4rem;
+    width: 100%;
+    text-align: center;
+}
+.modal-footer .btn{
+    width: 140.8px;
+    height: 35.83px;
+    display: inline-block;
+    border:  none !important;
+    background: url("../img/index/tc_btn.png") no-repeat;
+    background-size: 100% 100%;
+
+}
+.close-box .close span{
+    /*border: 1px solid red !important;*/
+    width: 100% !important;
+    display: inline-block !important;
+    text-align: center !important;
+    position: absolute !important;
+    left: 0 !important;
+}
+.close-box{
+    /*border: 1px solid red !important;*/
+    width: 100%  !important;
+    position: relative !important;
+}
+.modal-content .close img{
+    display: inline-block !important;
+}
+.modal-footer .btn:active,.modal-footer .btn:visited{
+    outline: none;
+    border: none;
+}
+.m-div div{
+    padding-bottom: 4px;
+    /*border: 1px solid red;*/
+    width: 100%;
+}
+.m-div div select{
+    width: 80% !important;
+    height: 32px;
+}
+
+.m-div{
+    /*border: 1px solid red;*/
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.modal-header .modal-title{
+    color: #FFF !important;
+    font-size: .6rem;
+}
+.modal-header,.modal-body,.modal-footer{
+    border: none !important;
+    padding: 10px !important;
+}
+.modal-body ul li{
+    font-size: .2rem;
+}
+.modal .modal-dialog .modal-content{
+    width: 7.3rem !important;
+    height: 7.92rem !important;
+    background: url("../img/index/kuang_bg2.png") no-repeat !important;
+    background-size: 7.3rem 7.92rem !important;
+    display: inline-block;
+    margin-top: 40%;
+    font-size: .4rem;
+    padding-left:15px;
+    padding-right:10px;
+}
+.modal .modal-dialog{
+    text-align: center;
+}

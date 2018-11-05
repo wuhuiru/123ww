@@ -1,0 +1,392 @@
+*{
+    font-family: "微软雅黑";
+    font-size: .35rem;
+}
+.bj .container .d-color{
+    border-radius: 5px;
+    background-color: #FFF !important;
+    box-shadow: #ff5027 0px 0px 20px;    /*边框阴影*/
+}
+
+/*模态框样式*/
+#mymodal1 .modal-body,#mymodal2 .modal-body{
+    padding: 15px !important;
+}
+#mymodal1 .modal-header,#mymodal2 .modal-header{
+    padding: 20px 0 20px 0 !important;
+}
+#mymodal1 .modal-footer,#mymodal2 .modal-footer{
+    margin-top: 38px;
+}
+#mymodal2 .modal-footer{
+    margin-top: 45px;
+}
+.modal-footer{
+    margin-top: .4rem;
+    width: 100%;
+    text-align: center;
+}
+.modal-footer .btn{
+    width: 140.8px;
+    height: 35.83px;
+    display: inline-block;
+    border:  none !important;
+    background: url("../img/index/tc_btn.png") no-repeat;
+    background-size: 100% 100%;
+
+}
+.close-box .close span{
+    /*border: 1px solid red !important;*/
+    width: 100% !important;
+    display: inline-block !important;
+    text-align: center !important;
+    position: absolute !important;
+    left: 0 !important;
+}
+.close-box{
+    /*border: 1px solid red !important;*/
+    width: 100%  !important;
+    position: relative !important;
+}
+.modal-content .close img{
+    display: inline-block !important;
+}
+.modal-footer .btn:active,.modal-footer .btn:visited{
+    outline: none;
+    border: none;
+}
+.m-div div{
+    padding-bottom: 4px;
+    /*border: 1px solid red;*/
+    width: 100%;
+}
+.m-div div select{
+    width: 80% !important;
+    height: 32px;
+}
+
+.m-div{
+    /*border: 1px solid red;*/
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.modal-header .modal-title{
+    color: #FFF !important;
+    font-size: .6rem;
+}
+.modal-header,.modal-body,.modal-footer{
+    border: none !important;
+    padding: 10px !important;
+}
+.modal .modal-dialog .modal-content{
+    width: 254px !important;
+    height: 254px !important;
+    background: url("../img/index/kuang_bg.png") no-repeat !important;
+    background-size: 254px 254px !important;
+    display: inline-block;
+    margin-top: 40%;
+}
+.modal .modal-dialog{
+    text-align: center;
+}
+/*5人团图片样式*/
+.img-box{
+    position: relative;
+}
+.img-box .img2,.img-box .img3,.img-box .img4,.img-box .img5{
+    position: absolute;
+    top: .25rem;
+    left: 1.2rem;
+}
+.img-box .img3,.img-box .img4,.img-box .img5{
+    left: 2.4rem;
+}
+.img-box .img4,.img-box .img5{
+    left: 3.6rem;
+}
+.img-box .img5{
+    left: 4.8rem;
+}
+/*活动简介*/
+.txt{
+    width: 100%;
+    text-align: center;
+}
+.jieshao{
+    display: inline-block;
+    padding: .3rem .6rem 0 .6rem;
+    width: 9.7rem;
+    height: 5.8rem;
+    background: url("../img/index/txt.png") no-repeat;
+    background-size: 9.7rem 5.8rem;
+    border-radius: 5px;
+    font-size: .3rem;
+    color: black;
+}
+/*项目介绍样式*//*项目详情*/
+.jieshao div h5{
+    padding: 0 .6rem 0 .6rem;
+    display: inline-block;
+    font-size: .45rem;
+    font-weight: bold;
+    text-align: center;
+    color: #ff5700;
+}
+.jieshao>div>img{
+    width: .43rem;
+    height: .4rem;
+}
+.jieshao p,.detils p{
+    font-size: .35rem;
+    text-align: left;
+}
+.jieshao div{
+    margin-bottom: .2rem;
+}
+/*背景*/
+.bj,.container{
+    background-color: #ff894c !important;
+}
+/*价格按钮*/
+.anniu{
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    bottom: 0;
+}
+.btn-box1,.btn-box2{
+    margin: 0 !important;
+    display: inline-block !important;
+    /*border: 1px solid red;*/
+    width: 50% !important;
+    position: relative !important;
+}
+.anniu>.btn-box1>.btn1,.anniu>.btn-box2>.btn1{
+    border: none;
+    outline: none;
+    height: 50px !important;
+    color: black !important;
+    width: 100% !important;
+    line-height: 50px !important;
+    text-align: center;
+    font-size: .4rem;
+    padding: 0 ;
+    /*font-size: 15px;*/
+    /*border: 1px solid red !important;*/
+    border-radius: 0 !important;
+}
+.anniu>.btn-box1>.btn1{
+    background-color: #FF6616 !important;
+    color: #FFFFFF !important;
+}
+.anniu>.btn-box2>.btn1{
+    background-color: #FED700 !important;
+    color: #855034 !important;
+}
+/*加价购*/
+.jia-go{
+    padding-bottom: .3rem;
+}
+/*按钮*/
+.shanchu{
+    width: 100%;
+    text-align: right;
+    padding: 0 .3rem 0 .3rem;
+}
+.shanchu span{
+    margin-right: 3rem;
+    font-size: .4rem ;
+}
+.shanchu a.btn-2{
+    display: inline-block;
+    text-align: center;
+    border: none;
+    width: 2.9rem;
+    height: 1.1rem;
+    background: url("../img/index/btn_bg.png");
+    background-size: 100% 100%;
+    color: #FFF;
+    line-height: 1.1rem;
+    text-decoration:none;
+}
+/*复选框定位*/
+.yichu div div{
+    width: 2.5rem;
+    height: 2.5rem;
+    /*border: 1px solid red ;*/
+    position: relative;
+}
+.yichu div div span{
+    display: block;
+    width: 2.5rem;
+    height: .6rem;
+    position: absolute;
+    background-color: #FFFFFF;
+    opacity: .7;
+    bottom: 0;
+    font-size: .35rem;
+    line-height: .6rem;
+    border-radius: 5px;
+}
+.yichu div input{
+    position: absolute;
+    right: 4px;
+}
+.yichu div div img{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+.yichu .xmChild{
+    padding-right: 8px;
+}
+.yichu>.jia>span{
+    font-size: .7rem;
+    font-weight: bold;
+}
+/*横向滚动*/
+.box-yichu{
+    overflow-x: scroll;
+}
+.yichu{
+    display: flex;
+    flex-direction: row;
+    /*justify-content: space-between;*/
+    align-items: center;
+    text-align: center;
+    padding: .5rem .3rem .5rem .3rem;
+}
+
+/*拼团样式*/
+.box2>div>p,.jia-go p{
+    width: 100%;
+    height: .6rem;
+    background-color: #FF5700;
+    padding: .05rem .3rem .05rem .3rem;
+    color: #FFF;
+    line-height: .6rem;
+}
+.box1{
+    padding: 0.3rem .3rem 0 .3rem;
+    margin-bottom: .2rem;
+}
+.chengt .ji-shi{
+    display: inline-block !important;
+}
+.chengt{
+    padding-bottom: .3rem;
+    margin: 0 .3rem 0 .3rem;
+    /*border-bottom: 1px solid #ff894c;*/
+}
+.chengt>span{
+    font-size: .45rem;
+}
+.chengt p{
+    display: inline-block !important;
+}
+/*图片样式及定位*/
+.box1 .img-box{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: .2rem;
+    /*border: 1px solid red;*/
+}
+.img-box img{
+    /*display: inline-block !important;*/
+    width: 1.5rem !important;
+    height: 1.5rem!important;
+}
+.leader .img-t{
+    width: 1.54rem !important;
+    height: .59rem !important;
+    position: absolute;
+    top: 1rem;
+}
+.leader{
+    width: 1.5rem;
+    height: 1.5rem;
+    position: relative;
+}
+/*99元拼团的间距*/
+.img-box .btn1{
+    border: none;
+    /*z-index: 1000;*/
+}
+.img-box .btn1 a.btn-1{
+    display: inline-block;
+    text-decoration:none;
+    border: none;
+    width: 2.4rem;
+    height: .9rem;
+    background: url("../img/index/btn_bg.png") no-repeat;
+    background-size: 2.4rem .9rem;
+    text-align: center;
+    line-height: .9rem;
+    color: #FFFFFF;
+}
+/*项目详情*/ /* 富文本样式 */
+.detils{
+    text-align: center;
+    width: 100%;
+    margin-bottom:50px;
+}
+.detils h5{
+    width: 3.4rem;
+    height: .68rem;
+    display: inline-block;
+    background: url("../img/index/xq.png") no-repeat;
+    background-size: 100% 100%;
+}
+.detils div p{
+    margin: 0;
+}
+.detils div p img{
+    display: block !important;
+    max-width: 100% !important ;
+    height: auto !important;
+}
+/*.detils div p{*/
+    /*!*text-indent: 25px !important;*!*/
+    /*background-color:  #ff9426 !important;*/
+    /*color: #FFFFFF !important;*/
+    /*width: 100% !important;*/
+    /*padding: 0 !important;*/
+/*}*/
+.detils div #title p span span{
+    font-size: .35rem!important;
+    color:#fff300 !important;
+}
+.btn-12{
+    display: inline-block;
+    text-align: center;
+    border: none;
+    width: 2.4rem;
+    height: .9rem;
+    background: url("../img/index/btn-2.png") no-repeat;
+    background-size: 100% 100%;
+    color: #FFF;
+    line-height: .9rem;
+}
+.fudong{
+
+    width: 2.5rem;
+    height:1.5rem;
+    background: url("../img/index/myTuan.png") no-repeat !important;
+    background-size: 2.5rem 1.5rem !important;
+}
+a.myTuan .fudong {
+    position: fixed;
+    top: 36%;
+    right: 0;
+    display: inline-block;
+    width: 2.5rem;
+    height:1.5rem;
+
+}

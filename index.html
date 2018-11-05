@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<link rel="stylesheet" href="css/bootstrapValidator.min.css">
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+	 <script src="js/layer/layer.js"></script>
+	<script src="js/bootstrapValidator.min.js"></script>
+	<title>立足当下，布局未来，教育品牌大狂欢</title>
+</head>
+<style type="text/css">
+</style>
+<body>
+	<div class="bj">
+		<div style="width: 100%;text-align: center" id="banner">
+		</div>
+		<!--浮动按钮-->
+		<div class="fudong" onClick="handleGoMyRegiment()">
+			<a class="myTuan" href="MyRegiment.html">
+			</a>
+		</div>
+
+		<!--活动介绍-->
+		<div class="txt">
+			<div class="jieshao">
+				<div>
+					<img src="img/index/678.png" alt="">
+					<h5>项目介绍</h5>
+					<img src="img/index/678.png" alt="">
+					<a href="#mymodal" id="mymodal-hd">查看活动规则</a>
+				</div>
+				<p style="text-align: left;text-indent: 20px">秋天，是收获的季节，同样也是教培行业的黄金季节。为助力行业发展，赋能行业，朗培教育集团旗下校长堡公司，联合行业内十家代表当下及将来最有生命力的优质教育品牌，特推出《立足当下，布局未来，教育品牌大狂欢》活动。让更多的校长享受更优质的教育产品，帮助校长重新布局，为学校打造完美的招生循环。组团前行，合作共赢，成功的路上有你、也有我！</p>
+			</div>
+		</div>
+		<!--使用规则-->
+		<div class="container">
+			<!--活动项目-->
+			<div class="sbk">
+				<div class="txt1">
+					<h5></h5>
+				</div>
+				<div id = "actItems">
+					<!-- 循环正在参与的活动的项目 -->
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="mymodal">
+			<div class="modal-dialog">
+				<div class="modal-content" >
+					<div class="modal-header">
+						<h4 class="modal-title">活动规则</h4>
+					</div>
+					<div class="modal-body" >
+						<ul class="list-unstyled" style="text-align: left;color: #ffffff">
+							<li>1.一家机构仅限1人参与；</li>
+							<li>2.拼团开启后，30分钟内付款有效；</li>
+							<li>3.报名提交信息：姓名+电话+所在城市；</li>
+							<li>4.所团优惠券仅限使用一次；</li>
+							<li>5.所团优惠券，需在活动期间使用。11月12日24点后，优惠券失效；</li>
+							<li>6.因活动期间，客户参与量大，客户成功团购后，服务人员会与活动结束后5日内，进行回访跟进；</li>
+							<li>7.因区域重复等原因无法合作的机构，活动后7日内返还团购款。</li>
+						</ul>
+					</div>
+					<div class="modal-footer">
+					</div>
+				</div>
+			</div>
+			<div class="close-box">
+				<button class="close" data-dismiss="modal">
+                    <span aria-hidden="true" >
+                        <img src="./img/index/close.png" class="img-close" style="z-index: 1000">
+                    </span>
+					<span class="sr-only">Close</span>
+				</button>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+
+$(function(){
+	$.get('http://wx.xiaozhangbao.com/Eleven/activity/getActicity',function(res){
+        sessionStorage.setItem('activityId',res.id);
+        // console.log(res.id);
+		var actUrl = "";
+		var actitemdiv = "";
+		if(res != null){
+			actUrl += '<img src="http://wx.xiaozhangbao.com/Eleven/static/bin/upload/apptemplate/img/'+ res.logo +'" class="img-responsive" style="display: inline-block" />';
+			$('#banner').html(actUrl);
+			$('#actP').html(res.remark);
+			var activityId = res.id;
+			$.get('http://wx.xiaozhangbao.com/Eleven/activityItem/queryByActivityId/'+activityId,function(resu){
+			    // console.log(resu);
+				for(var i = 0; i < resu.length; i++){
+                    var mark = resu[i].remark;
+                    if(mark.length>40){
+                        mark = mark.substr(0,40)+ "..." ;
+					}else{
+                        mark=mark;
+					}
+                    actitemdiv 	+=  `<div class="box-xm">
+						<div class="box-img">
+							<a href="#">
+								<img onClick="getDatil(${resu[i].id })" src="http://wx.xiaozhangbao.com/Eleven/static/bin/upload/apptemplate/img/${resu[i].logo}">
+							</a>
+						</div>
+						<div class="des">
+							<h6>${resu[i].itemName}</h6>
+							<span>3人团项目</span>
+							<p>${mark}</p>
+							<div class="can-t">
+								<div class="t-xm">
+									<span>￥${resu[i].newprice}</span>
+									<div>
+										<span><s>原价￥${resu[i].oldprice}</s></span>
+									</div>
+								</div>
+								<div class="t-go">
+									<a href="#" onClick="goCollage(${resu[i].id})">去参团</a>
+								</div>
+							</div>
+						</div>
+					</div>`;
+				}
+				// console.log(actitemdiv);
+				$('#actItems').html(actitemdiv);
+			},'json');
+			var str = res.remark;
+			var str1 = str.slice(0,24);
+            console.log(str1);
+            res.remark= str1+"...";
+		}
+
+	},'json');
+});
+//活动规则
+$("#mymodal-hd").click(function(){
+    $("#mymodal").modal("toggle");
+})
+//点击我的团
+function handleGoMyRegiment(){
+    var userId = sessionStorage.getItem('userId');
+    if(userId ){
+        // sessionStorage.setItem('actItemId',itemid);
+        window.location = "MyRegiment.html";
+    }else{
+        window.location = "login.html";
+    }
+}
+
+//点击图片去详情页
+function getDatil(itemid){
+    var userId = sessionStorage.getItem('userId');
+    if(userId != null ){
+        sessionStorage.setItem('actItemId',itemid);
+        window.location="details.html";
+    }else{
+        window.location = "login.html";
+    }
+}
+
+//去参团
+function goCollage(itemid){
+    var userId = sessionStorage.getItem('userId');
+    if(userId != null ){
+        sessionStorage.setItem('actItemId',itemid);
+        window.location="collage.html";
+    }else{
+        window.location = "login.html";
+    }
+}
+function handleGoMyRegiment(){
+    var userId = sessionStorage.getItem('userId');
+    if(userId ){
+        // sessionStorage.setItem('actItemId',itemid);
+        window.location = "MyRegiment.html";
+    }else{
+        window.location = "login.html";
+    }
+}
+</script>
+</html>

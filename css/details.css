@@ -1,0 +1,104 @@
+*{
+    font-family: "黑体";
+    font-size: .35rem;
+}
+
+/*定框样式*/
+.jiage{
+    position: relative;
+}
+.jiage p{
+    display: inline-block;
+    position: absolute;
+    width: 2rem;
+    height: 1rem;
+    text-align: center;
+    line-height: 1rem;
+    margin: 0;
+    top: 6rem;
+    font-size: .35rem;
+    color: #fff !important;
+    border-bottom-right-radius: 1rem;
+    border-top-right-radius: 1rem;
+    background-color: black;
+    opacity: .5;
+}
+.text-box{
+    margin-top:8px !important;
+    width: 100% !important;
+    display: inline-block;
+    border-radius: 10px !important;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.text-box h5{
+    display: inline-block;
+    color: #FFFFFF;
+}
+.text-box p{
+    width: 100% !important;
+    padding: 0.5rem .5rem 0 .5rem !important;
+    font-size: .4rem !important;
+}
+.text-box p span{
+    /*padding: 0 .5rem 0 .5rem !important;*/
+    font-size: .4rem !important;
+}
+.text-box p img{
+    display: block !important;
+    max-width: 100% !important ;
+    height: auto !important;
+}
+.text-box p h1{
+    width: 100% !important;
+    font-size: .5rem !important;
+    padding-top: 15px !important;
+    opacity: 1 !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-weight: bold !important;
+}
+
+.bj1{
+    width: 100%;
+    height: 100%;
+    background: url("../img/index/bg_color.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+#goumai{
+    display: inline-block !important;
+    width: 100% !important;
+    height: 55px !important;
+    line-height: 55px!important;
+    /*border: 1px solid red !important;*/
+    color: #855034 !important;
+    font-size: .45rem !important;
+    padding: 0;
+    margin: 0;
+    border-radius: 0 !important;
+    font-weight: bold;
+    background-color: #FED700 !important;
+    border: none;
+    text-align: center;
+}
+.btn-down{
+    width:100%;
+    position :fixed;
+    bottom:0
+}
+.fudong{
+    width: 3rem;
+    height:2rem;
+    background: url("../img/index/myTuan.png") no-repeat !important;
+    background-size: 3rem 2rem !important;
+}
+a.myTuan .fudong {
+    z-index: 1000;
+    position: fixed;
+    top: 36%;
+    right: 0;
+    display: inline-block;
+    width: 3rem;
+    height:2rem;
+
+}

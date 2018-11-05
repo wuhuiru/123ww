@@ -1,0 +1,145 @@
+*{
+    font-family: "微软雅黑";
+    font-size: .3rem;
+}
+.bj3{
+    background-color: #ffa373 !important;
+}
+.bj3{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 20px;
+    background-color: #ffa373 !important;
+    padding-bottom: 30px;
+    min-height: 820px !important;
+}
+.box1{
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    padding: 15px 10px 25px 10px;
+    box-shadow: #ff5027 0px 0px 10px;    /*边框阴影*/
+}
+.myregiment-row-margin{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/*图片宽度*/
+.myregiment-img-width{
+    width: 2.5rem !important;
+    height:2.5rem !important;
+}
+/* 调整文字居中 */
+.myregiment-div p{
+    margin: 0 !important;
+    /*padding-top: 11px;*/
+    /*margin-top: 11px;*/
+    color: #666666;
+    font-size: .26rem;
+}
+.myregiment-div h5{
+    font-size: .35rem;
+    color: #333333;
+    font-weight: bold;
+}
+.myregiment-div{
+    padding-bottom: .5rem;
+}
+/* 调整我的团按钮居中 */
+.myregiment-wd-button a.btn1{
+    display: block;
+    text-decoration:none;
+    border: none;
+    width: 2.4rem;
+    height: 1rem;
+    background: url("../img/index/btn_bg.png") no-repeat;
+    background-size: 2.4rem 1rem;
+    text-align: center;
+    line-height: 1rem;
+    color: #FFFFFF;
+}
+.pintuan-box{
+    border-bottom: 1px solid #ff5027;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+}
+/* 调整图片左上角文字 */
+.myregiment-wd-position{
+    position: relative;
+    /*border: 1px solid red;*/
+}
+.myregiment-wd{
+    /*border: 1px solid black;*/
+    width: 1.2rem;
+    height: .4rem;
+    position:absolute;
+    top: 0;
+    left: .2rem;
+}
+
+.yichu{
+    display: flex;
+    flex-direction: row;
+    /*justify-content: space-between;*/
+    align-items: center;
+    text-align: center;
+    padding-top: 15px;
+}
+.box1 .pad-top{
+    padding-top: 15px;
+}
+.yichu div img{
+    width: 2.5rem;
+    height:2.5rem;
+}
+.yichu div div{
+    width: 2.5rem;
+    height: 2.5rem;
+    /*border: 1px solid red ;*/
+    position: relative;
+    margin-left: 5px;
+}
+.yichu div div span{
+    display: block;
+    width: 2.5rem;
+    height: .6rem;
+    position: absolute;
+    background-color: #FFFFFF;
+    opacity: .7;
+    bottom: 0;
+    font-size: .35rem;
+    line-height: .6rem;
+    border-radius: 2px;
+}
+.yichu div input{
+    position: absolute;
+    right: 5px;
+}
+.yichu>.jia>span{
+    font-size: .7rem;
+    font-weight: bold;
+}
+/*按钮*/
+.shanchu{
+    width: 100%;
+    text-align: right !important;
+    padding: 0 .3rem 0 .3rem;
+    padding-bottom: 10px;
+}
+.shanchu span.txt1{
+    /*margin-right: 1rem;*/
+    margin-right: 30px !important;
+    font-size: .4rem ;
+}
+.shanchu span.btn-123,.myregiment-wd-button span.btn-12{
+    display: inline-block;
+    text-align: center;
+    border: none;
+    width: 2.4rem;
+    height: .9rem;
+    background: url("../img/index/btn-2.png") no-repeat;
+    background-size: 100% 100%;
+    color: #FFF;
+    line-height: .9rem;
+    margin-right:0 !important;
+}

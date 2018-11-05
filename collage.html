@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/collage.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/flexible.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/distpicker.js"></script>
+    <script src="js/layer/layer.js"></script>
+    <script src="./js/util.js"></script>
+    <title>双十一教育品牌大狂欢</title>
+	<style>
+		.addnum-block{
+            display:block;
+        }
+        .addnum-none{
+            display:none;
+        }
+	</style>
+</head>
+<body>
+<div class="bj"  >
+    <!--banner-->
+    <div style="text-align: center">
+        <img src="img/index/banner2.jpg" class="img-responsive" style="display: inline-block">
+    </div>
+    <!--浮动按钮-->
+        <div class="fudong" onClick="handleGoMyRegiment()"></div>
+
+    <!--项目介绍-->
+    <div class="txt">
+        <div class="jieshao" id="itemDetails">
+        </div>
+    </div>
+    <div class="container">
+        <div class="d-color">
+            <!--参与拼团-->
+            <div class="box2">
+                <!--系统团-->
+                <div class="fen-xian">
+                    <p style="margin: 0">小伙伴都在发起拼团，您可以直接参与</p>
+                    <div id="xtTuan" >
+                    </div>
+                </div>
+            </div>
+            <!--加价购-->
+            <div class="jia-go" id="jjGo">
+                <p>加价购</p>
+                <div class="box-yichu" >
+                    <div class="yichu">
+                        <div id="zProject">
+                            <!--<div>-->
+                                <!--<span>1380元</span>-->
+                                <!--<img src="img/index/aishengyin.png">-->
+                            <!--</div>-->
+                        </div>
+                        <div class="jia" style="width: 20px; text-align: center">
+                            <span>+</span>
+                        </div>
+                        <!--<div class="xmChild" style="margin-right:5px;">-->
+                            <!--<div>-->
+                                <!--<input type="checkbox">-->
+                                <!--<span >1380元</span>-->
+                                <!--<img src="img/index/aishengyin.png">-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <div class="shanchu">
+                    <!--原价-->
+                    <s><span id="originalPrice"></span></s>
+                    <input type="hidden" id="originalPrice1" value="">
+                    <!--优惠价-->
+                    <a class="btn-2" id="isCollageGroup"></a>
+                    <input type="hidden" id="isCollageGroup1" value="">
+                </div>
+            </div>
+        </div>
+        <!--项目详情-->
+        <div class="detils" >
+            <div id="itemContest">
+            </div>
+        </div>
+    </div>
+    <!--价格按钮-->
+    <div class="anniu">
+        <div class="btn-box1">
+            <button class="btn1" id="yuanjia" value="">原价3000元</button >
+        </div>
+        <div class="btn-box2">
+            <button class="btn1" id="kaituan"value="">我要开团 1380元</button>
+        </div>
+    </div>
+
+    <div class="modal fade" id="mymodal">
+        <div class="modal-dialog">
+            <div class="modal-content" >
+                <div class="modal-header">
+
+                    <h4 class="modal-title">完善信息</h4>
+                </div>
+                <div class="modal-body" >
+                    <div  id="distpicker" class="m-div">
+                        <div>
+                            <select id="province" value="" data-province="--选择省--" style="width: 30%">
+                            </select>
+                        </div>
+                        <div>
+                            <select id="city" value="" data-city="--选择市--"  style="width: 30%">
+                            </select>
+                        </div>
+                        <div>
+                            <select  id="ream" value="" data-district="--选择区--" style="width: 30%">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="handleCityInfo">确定</button>
+                </div>
+            </div>
+        </div>
+        <div class="close-box">
+            <button class="close" data-dismiss="modal">
+                    <span aria-hidden="true" >
+                        <img src="./img/index/close.png" class="img-close">
+                    </span>
+                <span class="sr-only">Close</span>
+            </button>
+        </div>
+    </div>
+    <div class="modal fade" id="mymodal1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">
+                        <span aria-hidden="true">x</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title">温馨提示</h4>
+                </div>
+                <div class="modal-body">
+                    <p>恭喜您，拼团成功！请于11月11日当天进入活动页【我的团】进行项目付费</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="guanbi">知道了</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="mymodal2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">
+                        <span aria-hidden="true">x</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title">温馨提示</h4>
+                </div>
+                <div class="modal-body">
+                    <p>该项目您已开过团，不可再次开团</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="guanbi1">知道了</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="itemcont" value="">
+<input type="hidden" id="groId" value="">
+</body>
+</html>
+
+<script>
+    $(function () {
+
+
+        if(getUserId()) {
+            $("#distpicker").distpicker();
+
+            // $("#mymodal").modal("toggle");
+
+            $('#guanbi').click(function () {
+                $("#mymodal1").modal("hide");
+            })
+
+            $('#fenxiang').click(function () {
+                $("#mymodal2").modal("toggle");
+            })
+            $("#guanbi1").click(function () {
+                $("#mymodal2").modal("hide");
+            })
+
+            console.log(sessionStorage.getItem('activityId'))
+            console.log(sessionStorage.getItem("actItemId"))
+            console.log(getUserId())
+
+            var activity = sessionStorage.getItem('activityId');
+            var userId = getUserId();
+            var projectId = sessionStorage.getItem("actItemId");
+
+            var newPrice = 0;
+            var oldPrice = 0;
+
+
+            //判断用户状态
+            function backStatus(id) {
+                $.ajax({
+                    url: baseURL + '/user/backStatus/' + id,
+                    type: 'get',
+                    success: function (res) {
+                        console.log(res);
+                        return res.status;
+                    },
+                    error: function (error) {
+                        console.log(error)
+                    }
+                })
+            }
+
+            //判断是否参团
+            function backColStatus(userId, itemId) {
+                $.ajax({
+                    url: baseURL + '/collage/backColStatus/' + userId + '/' + itemId,
+                    tpype: 'get',
+                    success: function (res) {
+                        console.log(res)
+                        return res.status
+                    },
+                    error: function (error) {
+                        console.log(error)
+                    }
+                })
+            }
+
+            //获取项目信息
+            $.ajax({
+                url: baseURL + '/activityItem/getItemById/' + projectId,
+                type: 'get',
+                success: function (res) {
+                    if (res) {
+                        var {contents, groupPeople, id, itemId, itemName, logo, newprice, oldprice, picture, remark, status} = res;
+                        var htmlRemark = "";
+                        htmlRemark += ` <div>
+                                            <img src="img/index/678.png" alt="">
+                                            <h5>项目介绍</h5>
+                                            <img src="img/index/678.png" alt="">
+                                        </div>
+                                        <p style="text-align: left;text-indent: 20px">123${remark}</p>`;
+
+                        $('#itemDetails').html(htmlRemark);
+                        var html = "";
+                        html += ` <div>
+                                        <h5></h5>
+                                    </div>
+                                    <div>
+                                       <p id="title" style="text-indent: 20px; text-align: left">${contents}</p>
+                                    </div>
+                              `;
+                        $('#itemContest').html(html);
+                        var htmlzProject = "";
+                        htmlzProject += `<div>
+                                <span>${newprice}元</span>
+                                <img src="http://wx.xiaozhangbao.com/Eleven/static/bin/upload/apptemplate/img/${logo}">
+                                <input type="hidden" id="item${id}new" value="${newprice}">
+                                <input type="hidden" id="item${id}old" value="${oldprice}">
+                            </div>
+                        `;
+                        $("#zProject").html(htmlzProject);
+                        newPrice = parseInt($('#item' + id + 'new').val());
+                        oldPrice = parseInt($('#item' + id + 'old').val());
+                        $('#originalPrice').text('原价' + oldPrice+'元');
+                        $('#isCollageGroup').text('优惠购' + newPrice+'元');
+                        $('#originalPrice1').val(oldPrice);
+						$('#isCollageGroup1').val(newPrice);
+                        $('#yuanjia').text("原价"+res.oldprice+"元");
+						$('#yuanjia').val(res.oldprice);
+						$('#kaituan').text("我要开团 "+res.newprice+"元");
+						$('#kaituan').val(res.newprice);
+						$('#itemcont').val(res.itemName);
+						console.log($('#isCollageGroup1').val());
+
+                    }
+                    console.log(res);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+
+            var itemUserId = 0;
+            //获取系统拼团的信息GET /api/getCollages
+            $.ajax({
+                url: baseURL + '/collage/getCollages/' + activity + "/" + projectId + '/' + userId,
+                type: "get",
+                success: function (res) {
+                    console.log(res);
+                    if (res) {
+                        var data = res;
+                        var html = "";
+                        for (var p of data) {
+							$('#groId').val(p.id);
+                            var {addnum, groupnum, id, itemId, itemName, newPrice, status, userId} = p
+                            itemUserId = p.userId;
+                            // console.log(itemUserId);
+                            if(itemUserId==-1){
+                                html += `<p style="margin: 0;padding-top:.2rem;padding-left: .3rem;color: #FF5700; font-size: .3rem">系统团</p>`
+                            }else{
+                                html += `<p style="margin: 0;padding-top:.2rem;padding-left: .3rem;color: #FF5700; font-size: .3rem">我的团</p>`
+                            }
+							puid = p.id;
+                            html += `
+                                        <div class="box1" >
+                                            <div class="img-box">
+                                                <div class="leader">
+                                                    <img src="img/index/leader.png" class="img-t">
+                                                       <img id="addnum0" src="img/index/pic1.png" alt="">
+                                                </div>
+                                                <div id="addnum1" class="addnum-block">
+                                                    <img src="img/index/wcy.png" alt="">
+                                                </div>
+                                                <div id="addnum2" class="addnum-block">
+                                                    <img src="img/index/wcy.png" alt="">
+                                                </div>
+
+                                                <div id="addnum3" class="addnum-none">
+                                                    <img src="img/index/pic2.png" alt="">
+                                                </div>
+                                                <div id="addnum4" class="addnum-none">
+                                                    <img src="img/index/wcy.png" alt="">
+                                                </div>
+
+                                                <div id="addnum5" class="addnum-none">
+                                                    <img src="img/index/pic2.png" alt="">
+                                                </div>
+                                                <div id="addnum6" class="addnum-none">
+                                                    <img src="img/index/pic4.png" alt="">
+                                                </div>
+                                                <div class="btn1">
+                                                    <a class="btn-1" id="cantuan" onclick="xtcantuan(${id},${newPrice})">参团${newPrice}元</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="chengt" style="border-bottom: 1px solid #ff894c;">
+                                            <span>还差${groupnum - addnum}人成团,</span>
+                                            <p class="djs interval">剩余时间01天12小时12分钟12秒</p>
+                                            <span style="display: none"> 活动已结束</span>
+                                        </div>
+                                    `;
+
+									$('#xtTuan').html(html);
+
+									if(addnum==0){
+										 $('#addnum0').removeClass("addnum-block").addClass('addnum-none');
+										 $('#addnum1').removeClass("addnum-block").addClass('addnum-none');
+										 $('#addnum2').removeClass("addnum-block").addClass('addnum-none');
+									 }
+									if(addnum==2){
+										console.log(222222222);
+										$('#addnum1').removeClass("addnum-block").addClass('addnum-none');
+										$('#addnum2').removeClass("addnum-block").addClass('addnum-none');
+										$('#addnum3').removeClass('addnum-none').addClass('addnum-block');
+										$('#addnum4').removeClass('addnum-none').addClass('addnum-block');
+									}
+									if(addnum==3){
+										$('#addnum1').removeClass("addnum-block").addClass('addnum-none');
+										$('#addnum2').removeClass("addnum-block").addClass('addnum-none');
+										$('#addnum5').removeClass('addnum-none').addClass('addnum-block');
+										$('#addnum6').removeClass('addnum-none').addClass('addnum-block');
+									}
+
+
+									//获取加价购
+									$.ajax({
+										url: baseURL + '/purchase/getPurchases/' + itemId,
+										type: "get",
+										success: function (res) {
+											console.log(res);
+											if(!res)
+											{
+												$("#jjGo").css("display","none");
+											}
+											else
+											{
+											for (var p of res) {
+												console.log(p)
+												var {actitemId, actitemName, activityId, id, logo, mainitemId, mainitemName, newprice, oldprice, status} = p
+												var htmlChildJjg = "";
+												htmlChildJjg += `<div class="xmChild" style="margin-right:5px;">
+													<div>
+														<input type="checkbox" id="item${id}" value="${id}" name="username">
+														<span >${newprice}元</span>`;
+                                                htmlChildJjg += `<div onClick="getDatil(${actitemId})"><img src="http://wx.xiaozhangbao.com/Eleven/static/bin/upload/apptemplate/img/${logo}"></div>`;
+                                                htmlChildJjg +=	`<input type="hidden" id="item${id}new" value="${newprice}">
+														        <input type="hidden" id="item${id}old" value="${oldprice}">
+													        </div>
+												        </div>`;
+
+												$('.yichu').append(htmlChildJjg);
+
+												var purLists = new Array();
+												$("#item" + id).click(function () {
+													var id = $(this).val();
+													console.log($('#originalPrice1').val());
+													console.log($('#isCollageGroup1').val());
+													var oldsun = $('#originalPrice1').val();
+													var newsun = $('#isCollageGroup1').val();
+
+													if ($(this).prop('checked')) {
+														purLists.push(id);
+														console.log(purLists);
+														newsun = parseInt(newsun) + parseInt($("#item" + id + 'new').val());
+														oldsun = parseInt(oldsun) + parseInt($("#item" + id + 'old').val());
+
+														$('#originalPrice').text(oldsun + '原价');
+														$('#isCollageGroup').text(newsun + '元购');
+
+														$('#originalPrice1').val(oldsun);
+														$('#isCollageGroup1').val(newsun);
+													} else {
+														for (var i = 0; i < purLists.length; i++) {
+															if (purLists[i] == $(this).val()) {
+																purLists.splice(i);
+															}
+														}
+
+														newsun = parseInt(newsun) - parseInt($("#item" + id + 'new').val());
+														oldsun = parseInt(oldsun) - parseInt($("#item" + id + 'old').val());
+
+
+														$('#originalPrice').text(oldsun + '原价');
+														$('#isCollageGroup').text(newsun + '元购');
+
+														$('#originalPrice1').val(oldsun);
+														$('#isCollageGroup1').val(newsun);
+													}
+
+												});
+												console.log(purLists);
+												$('#isCollageGroup').off().on('click', function () {
+													var uId = sessionStorage.getItem('userId');
+													var aId = sessionStorage.getItem('actItemId');
+													var atId = sessionStorage.getItem('activityId');
+													if(uId != null ){
+														var gId = $('#groId').val();
+														if(purLists == null || purLists.length < 1)
+														{
+															purLists.push(-1);
+														}
+														$.ajax({
+															url: baseURL + '/user/backStatus/' + uId,
+															type: 'get',
+															success: function (res) {
+																if (res.status == 200) {
+																	var price = $('#isCollageGroup1').val();
+																	$.ajax({
+																		url: baseURL + '/collage/backColStatus/' + uId + '/' + gId,
+																		tpype: 'get',
+																		success: function (res) {
+																			if (res.messId == -1) {
+																				joinCollage(activityId, actitemId, uId, gId, purLists, price, itemUserId);
+																				var ic = $("#itemcont").val();
+																				createOrder(uId,actitemId,activityId,2,ic,price);
+																			}else{
+																				layer.msg("您已参过此团");
+																				return;
+																			}
+																		},
+																		error: function (error) {
+																			console.log(error)
+																		}
+																	})
+																} else {
+																	$("#mymodal").modal("toggle");
+																}
+															},
+															error: function (error) {
+																console.log(error)
+															}
+														})
+													}else{
+														window.location = "login.html";
+													}
+												})
+
+											}
+										}
+										},
+										error: function (error) {
+											console.log(error)
+										}
+									});
+                        }
+                        ;
+                        //$('#xtTuan').html(html);
+                    }
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            })
+
+
+            // 填写地址信息
+            $('#handleCityInfo').click(function () {
+                console.log("1")
+                if ($('#province').val() == "" || $("#province").val() == null) {
+                    layer.msg("请选择您所在的省份");
+                } else if ($('#city').val() == "" || $('#city').val() == null) {
+                    layer.msg("请选择您所在的城市");
+                } else if ($('#ream').val() == "" || $("#ream").val() == null) {
+                    layer.msg("请选择您所在的区或县");
+                } else {
+					var uId = sessionStorage.getItem('userId');
+					console.log("uId"+uId)
+					if(uId != null){
+						$.ajax({
+							url: baseURL + '/user/perfectInfo',
+							type: 'post',
+							data: {
+								id: sessionStorage.getItem('userId'),
+								province: $('#province').val(),
+								city: $('#city').val(),
+								area: $('#ream').val(),
+							},
+							success: function (res) {
+								console.log(res)
+								if (res.setIsok) {
+									$("#mymodal").modal("hide");
+									layer("信息填写成功,您可以发起拼团了");
+								}
+							},
+							error: function (error) {
+								console.log(error)
+							}
+						})
+					}else{
+						window.location = "login.html";
+					}
+                }
+            })
+        }else{
+            location.href="login.html";
+        }
+
+		//原价购买
+		$("#yuanjia").click(function(){
+			var uId = sessionStorage.getItem('userId');
+			$.get(baseURL + '/user/backStatus/' + uId,function(res){
+				if(res.isok){
+					var uId = sessionStorage.getItem('userId');
+					var aId = sessionStorage.getItem('actItemId');
+					var atId = sessionStorage.getItem('activityId');
+					var ic = $("#itemcont").val();
+					var ip = $("#yuanjia").val();
+					createOrder(uId,atId,aId,3,ic,ip);
+				}else{
+					$("#mymodal").modal("toggle");
+				}
+			})
+		});
+
+		//开团购买
+		$("#kaituan").click(function(){
+			var uId = sessionStorage.getItem('userId');
+			var atId = sessionStorage.getItem('activityId');
+			var aId = sessionStorage.getItem('actItemId');
+			$.get(baseURL + '/user/backStatus/' + uId,function(res){
+				if(res.isok){
+					$.get(baseURL + '/user/backOpenStatus/' + atId + '/' + aId + '/' + uId,function(res){
+						if(res.isok){
+							layer.msg("您已开过此团。");
+							return;
+						}else{
+							var purs = new Array();
+							purs.push(0);
+							$.ajax({
+								url:baseURL+'/collage/openCollage',
+								type:"post",
+								traditional: true,
+								data:{
+									activityId:atId,
+									act_itemId:aId,
+									userId:uId,
+									purList:purs,
+									price:$('#isCollageGroup1').val(),
+									groupuserId:uId
+								},
+								success:function (res){console.log(res)},
+								error :function (error){console.log(error)}
+							})
+							var ic = $("#itemcont").val();
+							var ip = $("#kaituan").val();
+							createOrder(uId,aId,atId,3,ic,ip);
+						}
+					})
+				}else{
+					$("#mymodal").modal("toggle");
+				}
+			})
+		});
+    })
+
+            //参团
+            function joinCollage(activityId, act_itemId, userId, groupId, purList, price, groupuserId) {
+                $.ajax({
+                    url: baseURL + '/collage/joinCollage',
+                    type: "post",
+                    traditional: true,
+                    data: {
+                        activityId: activityId,
+                        act_itemId: act_itemId,
+                        userId: userId,
+                        groupId: groupId,
+                        purList: purList,
+                        price: price,
+                        groupuserId: groupuserId,
+                    },
+                    success: function (res) {
+                        console.log(res)
+                    },
+                    error: function (error) {
+                        console.log(error)
+                    }
+                })
+
+            }
+    function getDatil(itemid){
+            window.location="details.html?itemid="+itemid;
+    }
+	//系统参团
+	//joinCollage(activityId, act_itemId, userId, groupId, purList, price, groupuserId)
+	function xtcantuan(id,newPrice){
+		var activityId = sessionStorage.getItem('activityId');
+		var actItemId = sessionStorage.getItem('actItemId');
+		var uId = sessionStorage.getItem('userId');
+
+		var purList = [];
+		if(uId != null ){
+			$.ajax({
+				url: baseURL + '/user/backStatus/' + uId,
+				type: 'get',
+				success: function (res) {
+					if (res.isok) {
+						$.ajax({
+							url: baseURL + '/collage/backColStatus/' + uId + '/' + id,
+							tpype: 'get',
+							success: function (res) {
+								if (res.messId == -1) {
+									purList.push(0);
+									joinCollage(activityId, actItemId, uId, id, purList, newPrice, -1);
+									var ic = $("#itemcont").val();
+									createOrder(uId,activityId,actItemId,1,ic,newPrice);
+								}else{
+									layer.msg("您已参过此团");
+									return;
+								}
+							},
+							error: function (error) {
+								console.log(error)
+							}
+						})
+					} else {
+						$("#mymodal").modal("toggle");
+					}
+				},
+				error: function (error) {
+					console.log(error)
+				}
+			})
+		}else{
+			window.location = "login.html";
+		}
+	}
+
+	//点击我的团
+	function handleGoMyRegiment(){
+		var userId = sessionStorage.getItem('userId');
+		if(userId != null ){
+			window.location = "MyRegiment.html";
+		}else{
+			window.location = "login.html";
+		}
+	}
+
+
+	time=setInterval(function(){
+		var target = new Date("2018/11/12 23:59").getTime();
+		var now=new Date();
+		var date=now;
+		var sZong=parseInt((target-now)/1000);
+		dates=parseInt(sZong/(3600*24));
+		hours=parseInt(sZong%(3600*24)/3600);
+		mins=parseInt(sZong%3600/60);
+		s=sZong%60;
+		$(".interval").html("剩余时间"+dates+"天"+hours+"小时"+mins+"分钟"+s+"秒")
+		if(dates<=0&&hours<=0&&mins<=0&&s<=0){
+			$(".interval").html("活动已结束");
+		}
+	},1000);
+
+	//1,参团支付 2,系统团支付 3,直接支付
+	function createOrder(userId,activityId,itemId,type,tradeBody,totalFee) {
+		$.ajax({
+			async: true,
+			type: "POST",
+			url: "http://wx.xiaozhangbao.com/Eleven/payOrder/newOrder",
+			data: {
+				"userId": userId,
+				"activityId": activityId,
+				"itemId": itemId,
+				"type": type,
+				"tradeBody": tradeBody,
+				"totalFee": totalFee,
+			},
+			dataType: 'json',
+			success: function (result) {
+				location.href=result
+			}
+		});
+	}
+</script>

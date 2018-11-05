@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/ShareCollages1.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/flexible.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/distpicker.js"></script>
+    <script src="js/layer/layer.js"></script>
+    <script src="./js/util.js"></script>
+    <title>立足当下，布局未来，教育品牌大狂欢</title>
+    <style>
+
+        .addnum-block{
+            display:block;
+        }
+        .addnum-none{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <div class="bj"  >
+        <!--banner-->
+        <div style="text-align: center" id="bannerhtml">
+            <!--<img src="img/index/banner2.jpg" class="img-responsive" style="display: inline-block">-->
+        </div>
+        <!--浮动按钮-->
+        <!--项目介绍-->
+        <div class="txt">
+            <div class="jieshao" id="itemDetails">
+                <!--<div>-->
+                    <!--<img src="img/index/678.png" alt="">-->
+                    <!--<h5>项目介绍</h5>-->
+                    <!--<img src="img/index/678.png" alt="">-->
+                    <!--<a href="index.html">查看更多项目</a>-->
+                <!--</div>-->
+                <!--<p style="text-align: left;text-indent: 20px">秋天，是收获的季节，同样也是教培行业的黄金季节。为助力行业发展，赋能行业，朗培教育集团旗下校长堡公司，联合行业内十家代表当下及将来最有生命力的优质教育品牌，特推出《立足当下，布局未来，教育品牌大狂欢》活动。让更多的校长享受更优质的教育产品，帮助校长重新布局，为学校打造完美的招生循环。组团前行，合作共赢，成功的路上有你、也有我！</p>-->
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="d-color">
+                <!--参与拼团-->
+                <div class="box2">
+                    <!--分享拼团-->
+                    <div class="fen-xian" id="xtTuan" >
+                        <!--<p>小伙伴都在发起拼团，您可以直接参与</p>-->
+                        <!--<div >-->
+                            <!--<div class="box1" >-->
+                                <!--<div class="img-box">-->
+                                    <!--<div class="leader">-->
+                                        <!--<img src="img/index/leader.png" class="img-t">-->
+                                        <!--<img src="img/index/pic1.png" alt="">-->
+                                    <!--</div>-->
+                                    <!--<div>-->
+                                        <!--<img src="img/index/pic2.png" alt="">-->
+                                    <!--</div>-->
+                                    <!--<div>-->
+                                        <!--<img src="img/index/wcy.png" alt="">-->
+                                    <!--</div>-->
+                                    <!--<div class="btn1">-->
+                                        <!--<a class="btn-1" @click="isCollage()">去拼团</a>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="chengt" style="border-bottom:  1px solid #ff894c;">-->
+                                <!--<span>还差1人成团,</span>-->
+                                <!--<p >剩余时间01天12小时12分钟12秒</p>-->
+                                <!--<span style="display: none"> 活动已结束</span>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+                </div>
+                <!--加价购-->
+                <div class="jia-go" id="jjGo">
+                    <p>加价购</p>
+                    <div class="box-yichu" >
+                        <div class="yichu">
+                            <div id="zProject">
+                                <!--<div>-->
+                                    <!--<span>1380元</span>-->
+                                    <!--<img src="img/index/aishengyin.png">-->
+                                <!--</div>-->
+                            </div>
+                            <div class="jia" style="width: 20px; text-align: center">
+                                <span>+</span>
+                            </div>
+                            <!--<div class="xmChild">-->
+                                <!--<div>-->
+                                    <!--<input type="checkbox">-->
+                                    <!--<span >1380元</span>-->
+                                    <!--<img src="img/index/aishengyin.png">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="xmChild">-->
+                                <!--<div>-->
+                                    <!--<input type="checkbox">-->
+                                    <!--<span >1380元</span>-->
+                                    <!--<img src="img/index/aishengyin.png">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        </div>
+                    </div>
+                    <div class="shanchu">
+                        <s><span id="originalPrice"></span></s>
+                        <input type="hidden" id="originalPrice1" value="">
+                        <!--优惠价-->
+                        <a class="btn-2" id="isCollageGroup"></a>
+                        <input type="hidden" id="isCollageGroup1" value="">
+                    </div>
+                </div>
+            </div>
+            <!--项目详情-->
+            <div class="detils" id="itemContest">
+                <div>
+                    <h5></h5>
+                </div>
+                <div>
+                    <!--<p id="title" style="text-indent: 20px; text-align: left">秋天，是收获的季节，同样也是教培行业的黄金季节。为助力行业发展，赋能行业，朗培教育集团旗下校长堡公司，联合行业内十家代表当下及将来最有生命力的优质教育品牌，特推出《立足当下，布局未来，教育品牌大狂欢》活动。让更多的校长享受更优质的教育产品，帮助校长重新布局，为学校打造完美的招生循环。组团前行，合作共赢，成功的路上有你、也有我！</p>-->
+                </div>
+            </div>
+        </div>
+        <!--价格按钮-->
+        <div class="anniu">
+            <div class="btn-box1">
+                <button  class="btn1" id="handleGoShopping">原价3000元</button >
+                <input type="hidden" value="" id="handleGoShopping1">
+            </div>
+            <div class="btn-box2">
+                <button  class="btn1" id="isEntry">我要开团 1380元</button>
+                <input type="hidden" value="" id="isEntry1">
+            </div>
+        </div>
+
+        <div class="modal fade" id="mymodal">
+            <div class="modal-dialog">
+                <div class="modal-content" >
+                    <div class="modal-header">
+
+                        <h4 class="modal-title">完善信息</h4>
+                    </div>
+                    <div class="modal-body" >
+                        <div  id="distpicker" class="m-div">
+                            <div>
+                                <select id="province" value="" data-province="--选择省--" style="width: 30%">
+                                </select>
+                            </div>
+                            <div>
+                                <select id="city" value="" data-city="--选择市--"  style="width: 30%">
+                                </select>
+                            </div>
+                            <div>
+                                <select  id="ream" value="" data-district="--选择区--" style="width: 30%">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" id="handleCityInfo" >确定</button>
+                    </div>
+                </div>
+            </div>
+            <div class="close-box">
+                <button class="close" data-dismiss="modal">
+                    <span aria-hidden="true" >
+                        <img src="./img/index/close.png" class="img-close">
+                    </span>
+                    <span class="sr-only">Close</span>
+                </button>
+            </div>
+        </div>
+        <div class="modal fade" id="mymodal1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal">
+                            <span aria-hidden="true">x</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <h4 class="modal-title">温馨提示</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>恭喜您，拼团成功！请于11月11日当天进入活动页【我的团】进行项目付费</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" id="guanbi">知道了</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="mymodal2">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal">
+                            <span aria-hidden="true">x</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <h4 class="modal-title">温馨提示</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>该项目您已开过团，不可再次开团</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" id="guanbi1">知道了</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+<script>
+    var searchObj=search();
+    $(function (){
+
+        console.log(searchObj);
+        $("#distpicker").distpicker();
+        var userInfoId=searchObj.userId;
+            $.ajax({
+                url:"http://wx.xiaozhangbao.com/Eleven/user/byid/"+userInfoId,
+                type:"get",
+                success:function(res){
+                    phone=res.phone;
+                    sessionStorage.setItem("phone",res.phone);
+                    console.log(res.phone);
+                },
+                error:function(error){console.log(eror)}
+            })
+
+        var phone=sessionStorage.getItem('phone');
+
+
+
+        //判断用户状态
+        function backStatus(id) {
+            $.ajax({
+                url: baseURL + '/user/backStatus/' + id,
+                type: 'get',
+                success: function (res) {
+                    console.log(res);
+                    return res.status;
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+            })
+        }
+
+        //判断是否参团
+        function backColStatus(userId, itemId) {
+            $.ajax({
+                url: baseURL + '/collage/backColStatus/' + userId + '/' + itemId,
+                tpype: 'get',
+                success: function (res) {
+                    console.log(res)
+                    return res.status
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+            })
+        }
+
+        $('#handleCityInfo').click(function () {
+            if ($('#province').val() == "" || $("#province").val() == null) {
+                layer.msg("请选择您所在的省份");
+            } else if ($('#city').val() == "" || $('#city').val() == null) {
+                layer.msg("请选择您所在的城市");
+            } else if ($('#ream').val() == "" || $("#ream").val() == null) {
+                layer.msg("请选择您所在的区或县");
+            } else {
+                $.ajax({
+                    url: baseURL + '/user/perfectInfo',
+                    type: 'post',
+                    data: {
+                        id: sessionStorage.getItem("userId"),
+                        province: $('#province').val(),
+                        city: $('#city').val(),
+                        area: $('#ream').val(),
+                    },
+                    success: function (res) {
+                        console.log(res)
+                        if (res.status == 200) {
+                            $("#mymodal").modal("hide");
+                            layer.msg("信息填写成功,您可以发起拼团了");
+                        }
+                    },
+                    error: function (error) {
+                        console.log(error)
+                    }
+                })
+
+            }
+        })
+        //获取项目详情
+        $.ajax({
+            url: baseURL + '/activityItem/getItemById/' + searchObj.act_itemId,
+            type: 'get',
+            success: function (res) {
+                console.log(res);
+                if (res) {
+                    var {contents, groupPeople, id, itemId, itemName, logo, newprice, oldprice, picture, remark, status} = res;
+                    sessionStorage.setItem("content",itemName);
+                    var bannerhtml="";
+                    bannerhtml+=`
+            <img src="img/index/banner2.jpg" class="img-responsive" style="display: inline-block">
+      `;
+                    $('#bannerhtml').html(bannerhtml);
+
+                    var htmlRemark = "";
+                    htmlRemark += ` <div>
+                                            <img src="img/index/678.png" alt="">
+                                            <h5>项目介绍</h5>
+                                            <img src="img/index/678.png" alt="">
+                                        </div>
+                                        <p style="text-align: left;text-indent: 20px">${remark}</p>`;
+
+                    $('#itemDetails').html(htmlRemark);
+                    var html = "";
+                    html += ` <div>
+                                        <h5></h5>
+                                    </div>
+                                    <div>
+                                       <p id="title" style="text-indent: 20px; text-align: left">${contents}</p>
+                                    </div>
+                              `;
+                    $('#itemContest').html(html);
+                    var htmlzProject = "";
+                    htmlzProject += `<div>
+                                <span>${newprice}元</span>
+                                <img src="http://wx.xiaozhangbao.com/Eleven/static/bin/upload/apptemplate/img/${logo}">
+                                <input type="hidden" id="item${id}new" value="${newprice}">
+                                <input type="hidden" id="item${id}old" value="${oldprice}">
+                            </div>
+                        `;
+                    $("#zProject").html(htmlzProject);
+                    var newPrice = newprice;
+                    var oldPrice = oldprice;
+                    console.log(newPrice);
+                    $('#originalPrice').text('原价' + oldPrice+"元");
+                    $('#isCollageGroup').text('优惠购' + newPrice+"元");
+                    $('#originalPrice1').val(oldPrice);
+                    $('#isCollageGroup1').val(newPrice);
+
+                    $('#handleGoShopping').text('原价' + oldPrice+"元");
+                    $('#handleGoShopping1').val(oldPrice);
+
+                    $('#isEntry').text("我要开团"+newPrice+'元');
+                    $('#isEntry1').val(newPrice);
+                }
+
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+        //获取系统拼团信息
+        $.ajax({
+            url: baseURL + '/collage/getCollages/' + searchObj.activityId + "/" + searchObj.act_itemId + '/' + searchObj.userId,
+            type: "get",
+            success: function (res) {
+                console.log(res);
+                if (res) {
+                    var data = res;
+                    var html = "";
+                    var phoneyc=phone.slice(0,4)+"***"+phone.slice(8);
+
+
+                    for (var p of data) {
+                        var {addnum, groupnum, id, itemId, itemName, newPrice, status} = p
+                        itemUserId = p.userId;
+                        if(p.userId!=-1){
+                            html += `<p>${phoneyc}小伙伴都在发起拼团，您可以直接参与</p>
+                                    <div >
+                                        <div class="box1" >
+                                            <div class="img-box">
+                                                <div class="leader">
+                                                    <img src="img/index/leader.png" class="img-t">
+                                                      <img id="addnum0" src="img/index/pic1.png" alt="">
+                                                </div>`;
+
+                                            if(addnum==1){
+                                                html+=` <div id="addnum1" >
+                                                             <img src="img/index/wcy.png" alt="">
+                                                         </div>
+                                                        <div id="addnum2" >
+                                                            <img src="img/index/wcy.png" alt="">
+                                                        </div>`;
+
+                                            } else if(addnum==2){
+                                                html+=`
+                                                    <div id="addnum3" >
+                                                        <img src="img/index/pic2.png" alt="">
+                                                    </div>
+                                                    <div id="addnum4" >
+                                                        <img src="img/index/wcy.png" alt="">
+                                                    </div>
+                                                `;
+                                            }
+
+                                             html+=`   <div class="btn1">
+                                                    <a class="btn-1" onClick="cantuan(${id},${p.userId})" id="cantuan${id}">${newPrice}元参团</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="chengt" style="border-bottom: 1px solid #ff894c;">
+                                            <span>还差${groupnum - addnum}人成团,</span>
+                                            <p class="djs" id="interval${id}">剩余时间01天12小时12分钟12秒</p>
+                                            <span style="display: none"> 活动已结束</span>
+                                        </div>
+                                    </div>`;
+                        }
+                    };
+
+                    $('#xtTuan').html(html);
+
+                    time=setInterval(function(){
+                        var target = new Date("2018/11/11 24:00").getTime();
+                        var now=new Date();
+                        var date=now;
+                        var sZong=parseInt((target-now)/1000);
+                        dates=parseInt(sZong/(3600*24));
+                        hours=parseInt(sZong%(3600*24)/3600);
+                        mins=parseInt(sZong%3600/60);
+                        s=sZong%60;
+                        $("#interval"+id).html("剩余时间"+dates+"天"+hours+"小时"+mins+"分钟"+s+"秒")
+                        if(dates<=0&&hours<=0&&mins<=0&&s<=0){
+                            $("#interval"+id).html("活动以结束");
+                        }
+                    },1000)
+
+
+                }
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+        //获取加价购
+        $.ajax({
+            url: baseURL + '/purchase/getPurchases/' + searchObj.act_itemId,
+            type: "get",
+            success: function (res) {
+                console.log(res);
+                if(!res){
+                    $('#jjGo').css("display","none");
+                }else{
+                    for (var p of res) {
+                        console.log(p)
+                        var {actitemId, actitemName, activityId, id, logo, mainitemId, mainitemName, newprice, oldprice, status} = p
+                        var htmlChildJjg = "";
+                        htmlChildJjg += `<div class="xmChild" style="margin-right:5px;">
+                            <div>
+                                <input type="checkbox" id="item${id}" value="${id}" name="username">
+                                <span >${newprice}元</span>
+                                <img src="http://wx.xiaozhangbao.com/Eleven/static/bin/upload/apptemplate/img/${logo}">
+                                <input type="hidden" id="item${id}new" value="${newprice}">
+                                <input type="hidden" id="item${id}old" value="${oldprice}">
+                            </div>
+                        </div>
+                `;
+
+                        $('.yichu').append(htmlChildJjg);
+
+                        var purLists = new Array();
+                        $("#item" + id).click(function () {
+                            var id = $(this).val();
+                            console.log(id);
+                            var oldsun = $('#originalPrice1').val();
+                            var newsun = $('#isCollageGroup1').val();
+                            if ($(this).prop('checked')) {
+                                purLists.push(id);
+                                console.log(purLists);
+                                newsun = parseFloat(newsun,2) + parseFloat($("#item" + id + 'new').val(),2);
+                                oldsun = parseFloat(oldsun,2) + parseFloat($("#item" + id + 'old').val(),2);
+
+                                $('#originalPrice').text(oldsun + '原价');
+                                $('#isCollageGroup').text("优惠购"+newsun + '元');
+
+                                $('#originalPrice1').val(oldsun);
+                                $('#isCollageGroup1').val(newsun);
+
+                            } else {
+                                for (var i = 0; i < purLists.length; i++) {
+                                    if (purLists[i] == $(this).val()) {
+                                        purLists.splice(i);
+                                    }
+                                }
+
+                                newsun = parseFloat(newsun,2) - parseFloat($("#item" + id + 'new').val(),2);
+                                oldsun = parseFloat(oldsun,2) - parseFloat($("#item" + id + 'old').val(),2);
+
+
+                                $('#originalPrice').text(oldsun + '原价元');
+                                $('#isCollageGroup').text('优惠购'+newsun + '元');
+
+                                $('#originalPrice1').val(oldsun);
+                                $('#isCollageGroup1').val(newsun);
+
+                            }
+                        });
+                        // purList=purLists.length==0?'':purLists;
+                        console.log(purLists);
+                        // 加价购参团
+                        $('#isCollageGroup').off().on('click', function () {
+                            if(sessionStorage.getItem("userId")) {
+                                $.ajax({
+                                    url: baseURL + '/user/backStatus/' + sessionStorage.getItem('userId'),
+                                    type: 'get',
+                                    success: function (res) {
+                                        if (res.status == 200) {
+                                            var price = $('#isCollageGroup1').val();
+                                            if(purLists.length==0){
+                                                purLists="";
+                                            }
+                                            $.ajax({
+                                                url: baseURL + '/collage/backColStatus/' + sessionStorage.getItem('userId') + '/' + searchObj.act_itemId,
+                                                tpype: 'get',
+                                                success: function (res) {
+                                                    if (res.messId == -1) {
+                                                        joinCollageJJg(searchObj.activityId, searchObj.act_itemId, sessionStorage.getItem('userId'), id, purLists, price, itemUserId);
+                                                    }
+                                                },
+                                                error: function (error) {
+                                                    console.log(error)
+                                                }
+                                            })
+                                        } else {
+                                            $("#mymodal").modal("toggle");
+                                        }
+                                    },
+                                    error: function (error) {
+                                        console.log(error)
+                                    }
+                                })
+                            }else{
+                                location.href="login.html";
+                            }
+                        })
+
+                        //直接购买
+                        $('#handleGoShopping').off().on('click', function () {
+                            if(sessionStorage.getItem("userId")){
+                                $.ajax({
+                                    url: baseURL + '/user/backStatus/' + sessionStorage.getItem('userId'),
+                                    type: 'get',
+                                    success:function (res){
+                                        if(res.status==200){
+                                            $.ajax({
+                                                url: baseURL + '/collage/backColStatus/' + sessionStorage.getItem("userId") + '/' + searchObj.act_itemId,
+                                                tpype: 'get',
+                                                success: function (res) {
+                                                    console.log(res)
+                                                    if(res.messId==-1){
+                                                        createOrder(sessionStorage.getItem("userId"),searchObj.activityId,searchObj.act_itemId,3,sessionStorage.getItem('content'),$('#handleGoShopping1').val())
+                                                    }else{
+                                                        $("#mymodal").modal("toggle");
+                                                    }
+                                                },
+                                                error: function (error) {
+                                                    console.log(error)
+                                                }
+                                            })
+                                        }else{
+                                            $("#mymodal").modal("toggle");
+                                        }
+                                    },
+                                })
+
+                            }else{
+                                location.href="login.html";
+                            }
+                        })
+                        //我要开团
+                        $('#isEntry').off().on('click', function () {
+                            if(sessionStorage.getItem("userId")){
+                                $.ajax({
+                                    url: baseURL + '/user/backStatus/' + sessionStorage.getItem('userId'),
+                                    type: 'get',
+                                    success:function (res){
+                                    if (res.status==200){
+                                        $.ajax({
+                                            url: baseURL + '/collage/backColStatus/' + sessionStorage.getItem("userId") + '/' + searchObj.act_itemId,
+                                            tpype: 'get',
+                                            success: function (res) {
+                                                console.log(res)
+                                                if(res.messId==-1){
+                                                    console.log(purLists.length);
+                                                    if(purLists==0){
+                                                        purLists="";
+                                                    }
+                                                    $.ajax({
+                                                        url:baseURL+'/collage/openCollage',
+                                                        type:"post",
+                                                        traditional: true,
+                                                        data:{activityId:searchObj.activityId,
+                                                            act_itemId:searchObj.act_itemId,
+                                                            userId:sessionStorage.getItem('userId'),
+                                                            purList:purLists,
+                                                            price:$('#originalPrice1').val(),
+                                                            groupuserId:searchObj.groupuserId},
+                                                        success:function (res){
+                                                            console.log(res)
+                                                            if(res.status==200){
+                                                                createOrder(sessionStorage.getItem("userId"),searchObj.activityId,searchObj.act_itemId,3,sessionStorage.getItem('content'),$('#isEntry1').val());
+                                                            }
+                                                        },
+                                                        error :function (error){console.log(error)}
+                                                    })
+                                                }else{
+                                                    $("#mymodal").modal("toggle");
+                                                }
+                                            },
+                                            error: function (error) {
+                                                console.log(error)
+                                            }
+                                        })
+                                    } else{
+                                        $("#mymodal").modal("toggle");
+                                    }
+                                    }
+                                })
+
+                            }else{
+                                location.href="login.html";
+                            }
+                        })
+                    }
+                }
+            },
+            error: function (error) {
+                console.log(error)
+            }
+        });
+
+
+
+        $('#handleCityInfo').click(function () {
+            if ($('#province').val() == "" || $("#province").val() == null) {
+                layer.msg("请选择您所在的省份");
+            } else if ($('#city').val() == "" || $('#city').val() == null) {
+                layer.msg("请选择您所在的城市");
+            } else if ($('#ream').val() == "" || $("#ream").val() == null) {
+                layer.msg("请选择您所在的区或县");
+            } else {
+                if(sessionStorage.getItem("userId")){
+                    $.ajax({
+                        url: baseURL + '/user/perfectInfo',
+                        type: 'post',
+                        data: {
+                            id: sessionStorage.getItem("userId"),
+                            province: $('#province').val(),
+                            city: $('#city').val(),
+                            area: $('#ream').val(),
+                        },
+                        success: function (res) {
+                            console.log(res)
+                            if (res.status == 200) {
+                                layer.msg("信息填写成功,您可以发起拼团了");
+                            }
+                        },
+                        error: function (error) {
+                            console.log(error)
+                        }
+                    })
+                }else{
+                    location.href="login.html";
+                }
+            }
+        })
+
+
+
+
+
+    })
+    //参团
+    function cantuan (id,userId) {
+        // var newsun=$('#isCollageGroup1').val();
+        if (sessionStorage.getItem('userId')) {
+            $.ajax({
+                url: baseURL + '/user/backStatus/' + sessionStorage.getItem('userId'),
+                type: 'get',
+                success: function (res) {
+                    if (res.status == 200) {
+                        $.ajax({
+                            url: baseURL + '/collage/backColStatus/' + sessionStorage.getItem('userId') + '/' + id,
+                            tpype: 'get',
+                            success: function (res) {
+                                console.log(res);
+                                if (res.messId == -1) {
+                                    joinCollage(searchObj.activityId, searchObj.act_itemId,  sessionStorage.getItem('userId'), id, "", searchObj.newprice, userId);
+                                }
+                            },
+                            error: function (error) {
+                                console.log(error)
+                            }
+                        })
+                    } else {
+                        $("#mymodal").modal("toggle");
+                    }
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+            })
+        } else {
+            location.href = "login.html";
+        }
+    }
+//主项目参团
+    function joinCollage(activityId, act_itemId, userId, groupId, purList, price, groupuserId) {
+        $.ajax({
+            url: baseURL + '/collage/joinCollage',
+            type: "post",
+            traditional: true,
+            data: {
+                activityId: activityId,
+                act_itemId: act_itemId,
+                userId: userId,
+                groupId: groupId,
+                purList: purList,
+                price: price,
+                groupuserId: groupuserId,
+            },
+            success: function (res) {
+                if(res.status==200){
+                     createOrder(sessionStorage.getItem("userId"),searchObj.activityId,searchObj.act_itemId,1,sessionStorage.getItem('content'),$('#isEntry1').val())
+                }
+            },
+            error: function (error) {
+                console.log(error)
+            }
+        })
+    };
+
+//购买加价购
+    function joinCollageJJg(activityId, act_itemId, userId, groupId, purList, price, groupuserId) {
+        $.ajax({
+            url: baseURL + '/collage/joinCollage',
+            type: "post",
+            traditional: true,
+            data: {
+                activityId: activityId,
+                act_itemId: act_itemId,
+                userId: userId,
+                groupId: groupId,
+                purList: purList,
+                price: price,
+                groupuserId: groupuserId,
+            },
+            success: function (res) {
+                if(res.status==200){
+                     createOrder(sessionStorage.getItem("userId"),searchObj.activityId,searchObj.act_itemId,2,sessionStorage.getItem('content'),$('#isEntry1').val())
+                }
+            },
+            error: function (error) {
+                console.log(error)
+            }
+        })
+    };
+    //获取数据
+    function search(){
+        var searchObj={}
+        if(location.search!=""){
+            var search=location.search.slice(1);//"_ijt=uius89iamtsiffau6gdjhdkjmn"
+            if(search.indexOf("&")!=-1){
+                var arr=search.split("&");
+                for(var str of arr){
+                    var [key,value]=str.split("=");
+                    if(!(key in searchObj))
+                        searchObj[key]=value
+                    else
+                        searchObj[key]=[].concat(searchObj[key],value);
+                }
+            }else{
+                var [key,value]=search.split("=");
+                searchObj[key]=value;
+            }
+        }
+        return searchObj;
+    }
+
+    //1,参团支付 2,系统团支付 3,直接支付
+    function createOrder(userId,activityId,itemId,type,tradeBody,totalFee) {
+        $.ajax({
+            async: true,
+            type: "POST",
+            url: "http://wx.xiaozhangbao.com/Eleven/payOrder/newOrder",
+            data: {
+                "userId": userId,
+                "activityId": activityId,
+                "itemId": itemId,
+                "type": type,
+                "tradeBody": tradeBody,
+                "totalFee": totalFee,
+            },
+            dataType: 'json',
+            success: function (result) {
+                location.href=result
+            }
+        });
+    }
+</script>
+</html>
